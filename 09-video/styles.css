@@ -247,6 +247,7 @@ h1 {
   font-size: 0.85rem;
   cursor: pointer;
   text-transform: capitalize;
+  color: var(--clr-primary-5);
 }
 
 .switch {
