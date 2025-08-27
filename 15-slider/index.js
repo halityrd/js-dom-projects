@@ -5,3 +5,31 @@ const prevBtn = document.querySelector('.prevBtn');
 slides.forEach(function (slide, index) {
   slides.style.left = `${index * 100}%`;
 });
+
+let counter = 0;
+
+nextBtn.addEventListener('click', function () {
+  counter++;
+  carousel();
+});
+
+prevBtn.addEventListener('click', function () {
+  counter--;
+  carousel();
+});
+
+function carousel() {
+  // working with slides
+
+  if (counter === slides.length) {
+    counter = slides.length - 1;
+  }
+
+  if (counter < 0) {
+    counter = slides.length - 1;
+  }
+
+  slides.forEach(function (slide) {
+    slide.style.transform = `translateX(-${counter * 100})`;
+  });
+}
