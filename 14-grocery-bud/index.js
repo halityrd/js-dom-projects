@@ -133,6 +133,15 @@ function setBackToDefault() {
 
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
+  // const grocery = { id: id, value: value };
+  const grocery = { id, value };
+  let items = localStorage.getItem('list')
+    ? JSON.parse(localStorage.getItem('list'))
+    : [];
+
+  console.log(items);
+  items.push(grocery);
+  localStorage.setItem('list', JSON.stringify(items));
   console.log('added to local storage');
 }
 
